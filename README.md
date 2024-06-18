@@ -4,13 +4,21 @@ scRNAseq-dev stores code used to prepare new single-cell RNA-seq (scRNAseq) data
 
 This is the **first stage** to add a new scRNAseq dataset in iAtlas. Currently, there are **4 stages** in this process, summarized below: 
 1. Data preparation (code in this repo), with the following outputs:
+
     a. h5ad file with normalized expression as a layer, and harmonized cell type names
+
     b. UMAP coordinates in a csv file
+
 2. Compute gene expression statistics *(currently in notebooks stored in this repo, to be converted to a new workflow)*, with the following output:
+
     a. A csv file with statistics of frequency and average of expression of a given gene accross cells in a cell type
+
 3. Run workflow to compute pseudobulk and geneset scoring (https://github.com/CRI-iAtlas/nf-pseudobulk), with the following output:
+
     a. Pseudobulk values of expression for each combination of sample + cell type
+
     b. GSEA results using values from (3a) and genesets described in [Thorsson et al, 2018](https://gdc.cancer.gov/about-data/publications/panimmune).
+
 4. Create manifest files for upload in the CRI iAtlas database (https://github.com/CRI-iAtlas/iatlasManifests)
 
 
